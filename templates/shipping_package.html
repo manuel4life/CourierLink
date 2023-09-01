@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form
+        {
+            display: flex;
+            flex-direction: column;
+            row-gap: 4px;
+            width: 300px;
+            
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="POST">
+        <input type="hidden" name="id">
+        <select name="sender_id">
+            <option value="">Select Sender</option>
+            {% for sender in senders %}
+                <option value="{{ sender['id'] }}">{{ sender['first_name'] }} {{ sender['last_name'] }}</option>
+            {% endfor %}
+        </select>
+        <select name="recipient_id">
+            <option value="">Select Recipient</option>
+            {% for recipient in recipients %}
+                <option value="{{ recipient['id'] }}">{{ recipient['first_name'] }} {{ recipient['last_name'] }}</option>
+            {% endfor %}
+        </select>
+        <input type="text" placeholder="Package weight" name="weight" />
+        <input type="text" placeholder="Package height" name="height" />
+        <input type="text" placeholder="Package width" name="width" />
+        <input type="text" placeholder="Package length" name="length" />
+        <input type="text" placeholder="Shipping Carrier" name="shipping_carrier">
+        <input type="text" placeholder="Shipping Class" name="shipping_class">
+        <input type="date" placeholder="Shipping Date" name="shipping_date">
+        <input type="date" placeholder="Delivery Date" name="delivery_date">
+        <input type="text" placeholder="Tracking Number" name="tracking_number">
+        <input type="text" placeholder="Shipping Cost" name="shipping_cost">
+        <button type="submit">Add Package</button>
+    </form>
+
+    <div>
+        <p>List of all Packages</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sender ID</th>
+                    <th>Recipient ID</th>
+                    <th>Package weight</th>
+                    <th>Package height</th>
+                    <th>Package width</th>
+                    <th>Package length</th>
+                    <th>Shipping Carrier</th>
+                    <th>Shipping Class</th>
+                    <th>Shipping Date</th>
+                    <th>Delivery Date</th>
+                    <th>Tracking Number</th>
+                    <th>Shipping Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for package in shipping_packages %}
+                    <tr>
+                        <td>{{package['sender_id'] }}</td>
+                        <td>{{package['recipient_id'] }}</td>
+                        <td>{{package['weight'] }}</td>
+                        <td>{{package['height'] }}</td>
+                        <td>{{package['width'] }}</td>
+                        <td>{{package['length'] }}</td>
+                        <td>{{package['shipping_carrier'] }}</td>
+                        <td>{{package['shipping_class'] }}</td>
+                        <td>{{package['shipping_date'] }}</td>
+                        <td>{{package['delivery_date'] }}</td>
+                        <td>{{package['tracking_number'] }}</td>
+                        <td>{{package['shipping_cost'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

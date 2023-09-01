@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form
+        {
+            display: flex;
+            flex-direction: column;
+            row-gap: 4px;
+            width: 300px;
+            
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="POST">
+        <input type="text" placeholder="Sender first name" name="first_name" />
+        <input type="text" placeholder="Sender last name" name="last_name" />
+        <input type="email" placeholder="Sender email" name="email" />
+        <input type="tel" placeholder="Sender phone numbere" name="phone_number" />
+        <input type="text" placeholder="Enter street address" name="street_address" />
+        <input type="text" placeholder="Enter city" name="city" />
+        <input type="text" placeholder="Enter state" name="state" />
+        <input type="text" placeholder="Enter zip code" name="zip_code" />
+        <input type="text" placeholder="Enter country" name="country" />
+        <button type="submit">Add Sender</button>
+    </form>
+
+    <div>
+        <p>List of all senders</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Email</th>
+                    <th>Phone number</th>
+                    <th>Street address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zip code</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for sender in senders %}
+                    <tr>
+                        <td>{{sender['first_name'] }}</td>
+                        <td>{{sender['last_name'] }}</td>
+                        <td>{{sender['email'] }}</td>
+                        <td>{{sender['phone_number'] }}</td>
+                        <td>{{sender['street_address'] }}</td>
+                        <td>{{sender['city'] }}</td>
+                        <td>{{sender['state'] }}</td>
+                        <td>{{sender['zip_code'] }}</td>
+                        <td>{{sender['country'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+    </div>
+</body>
+</html>
