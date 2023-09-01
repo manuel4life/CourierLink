@@ -8,6 +8,11 @@ from connection import session
 
 app = Flask(__name__)
 
+
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
+
 @app.route('/')
 def home():
     return "My API"

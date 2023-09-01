@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="../static/css/style.css">
+  </head>
+  <body>
+    
+    <div class="side-manu">
+         <div class="side-logo"><img src="../static/asset/images/logo.png" alt=""></div>
+        <ul>
+          <li><img src="../static/asset/images/layouts.png" alt="">&nbsp;Dashboard</li>
+          <li> <img src="../static/asset/images/receiver.png" alt="">&nbsp;Sender</li>
+          <li><img src="../static/asset/images/recipient1.png" alt="">&nbsp;Recipient</li>
+          <li><img src="../static/asset/images/package1.png" alt="">&nbsp;Packages</li>
+          <li><img src="../static/asset/images/help-center.png" alt="">&nbsp;Help</li>
+          <li><img src="../static/asset/images/call.png" alt="">&nbsp;Contact</li>
+          <li><img src="../static/asset/images/team.png" alt="">&nbsp;About Us</li>
+          <li><img src="../static/asset/images/switch.png" alt="">Logout</li>
+      </ul>
+    </div>
+
+    {% block content %}
+
+    {% endblock %}
+</body>
+</html>
