@@ -1,12 +1,96 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block title %} Dashboard {% endblock %} {% block
+content %}
 
-{% block title %}
-Dashboard
-{% endblock %}
-
-{% block content %}
-
-<div class="dashboard-view">
+<!-- <div class="dashboard-view">
   <h1>This is the dashboard</h1>
+</div> -->
+
+<div class="container">
+  <div class="header">
+    <div class="nav">
+      <div class="search">
+        <input type="text" placeholder="Search.." />
+        <button type="submit">
+          <img src="../static/asset/images/search.png" alt="" />
+        </button>
+      </div>
+      <div class="user">
+        <a href="#" class="btn">Add New</a>
+        <img src="../static/asset/images/notifications.png" alt="" />
+        <div class="img-case">
+          <img src="../static/asset/images/user.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="cards">
+      <div class="card">
+        <div class="box">
+          <h1>7453</h1>
+          <h2>Senders</h2>
+        </div>
+        <div class="icon-case">
+          <img src="../static/asset/images/notifications.png" alt="" />
+        </div>
+      </div>
+      <div class="card">
+        <div class="box">
+          <h1>2194</h1>
+          <h2>Receivers</h2>
+        </div>
+        <div class="icon-case">
+          <img src="../static/asset/images/notifications.png" alt="" />
+        </div>
+      </div>
+      <div class="card">
+        <div class="box">
+          <h1>8994</h1>
+          <h2>Packages</h2>
+        </div>
+        <div class="icon-case">
+          <img src="../static/asset/images/notifications.png" alt="" />
+        </div>
+      </div>
+      <div class="card">
+        <div class="box">
+          <h1>374990009</h1>
+          <h2>Income</h2>
+        </div>
+        <div class="icon-case">
+          <img src="../static/asset/images/notifications.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="content-2">
+      <div class="senders">
+        <div class="title">
+          <h2>Information Box</h2>
+          <a href="#" class="btn">View All</a>
+        </div>
+        <div class="table">
+          <table>
+            <tr>
+              <th>Sender</th>
+              <th>Recipient</th>
+              <th>Tracking</th>
+              <th>Date</th>
+            </tr>
+            <tr>
+              <td>John Doe</td>
+              <td>John Doe</td>
+              <td>John Doe</td>
+              <td><a href="" class="btn"></a>View</td>
+          </table>
+        </div>
+      </div>
+      <div class="recipients">
+        <div class="title">
+          <h2>Information Box</h2>
+          <a href="#" class="btn">View All</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock %}
