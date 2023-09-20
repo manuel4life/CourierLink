@@ -17,46 +17,60 @@
       </div>
       <ul>
         <li>
-          <img src="../static/asset/images/layouts.png" alt="" />&nbsp;Dashboard
+          <a href="{{ url_for('dashboard') }}">
+            <img src="../static/asset/images/layouts.png" alt="" />&nbsp;<span>Dashboard</span>
+          </a>
         </li>
         <li>
-          <img src="../static/asset/images/receiver.png" alt="" />&nbsp;Sender
+          <a href="{{ url_for('add_sender') }}">
+            <img src="../static/asset/images/receiver.png" alt="" />&nbsp;<span>Sender</span>
+          </a>
         </li>
         <li>
-          <img
+          <a href="{{ url_for('add_recipient')}}">
+            <img
             src="../static/asset/images/recipient1.png"
             alt=""
-          />&nbsp;Recipient
+          />&nbsp;<span>Recipient</span>
+          </a>
         </li>
         <li>
-          <img src="../static/asset/images/package1.png" alt="" />&nbsp;Packages
+          <a href="{{ url_for('add_package')}}">
+            <img src="../static/asset/images/package1.png" alt="" />&nbsp;<span>Packages</span>
+          </a>
         </li>
         <li>
-          <img src="../static/asset/images/help-center.png" alt="" />&nbsp;Help
+          <img src="../static/asset/images/help-center.png" alt="" />&nbsp;<span>Help</span>
         </li>
         <li>
-          <img src="../static/asset/images/call.png" alt="" />&nbsp;Contact
+          <img src="../static/asset/images/call.png" alt="" />&nbsp;<span>Contact</span>
         </li>
         <li>
-          <img src="../static/asset/images/team.png" alt="" />&nbsp;About Us
+          <img src="../static/asset/images/team.png" alt="" />&nbsp;<span>About Us</span>
         </li>
         <li><img src="../static/asset/images/switch.png" alt="" />Logout</li>
       </ul>
     </div>
-    <!-- <div class="container">
+    <div class="container">
       <div class="header">
         <div class="nav">
           <div class="search">
-            <input type="text" placeholder="search" />
-            <button type="submit"><img src="../static/asset/images/search.png" alt=""></button>
+            <input type="text" placeholder="Search.." />
+            <button type="submit">
+              <img src="../static/asset/images/search.png" alt="" />
+            </button>
           </div>
           <div class="user">
             <a href="#" class="btn">Add New</a>
+            <img src="../static/asset/images/notifications.png" alt="" />
+            <div class="img-case">
+              <img src="../static/asset/images/user.png" alt="" />
+            </div>
           </div>
         </div>
       </div>
-    </div> -->
-
-    {% block content %} {% endblock %}
+      <div class="content">
+        {% block content %} {% endblock %}        
+      </div>
   </body>
 </html>

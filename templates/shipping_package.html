@@ -1,29 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        form
-        {
-            display: flex;
-            flex-direction: column;
-            row-gap: 4px;
-            width: 300px;
-            
-        }
+{% extends 'base.html' %} 
+{% block title %} Shipping Package {% endblock %} 
+{% block content %}
 
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-    </style>
-</head>
-<body>
+<style>
+    form
+    {
+        display: flex;
+        flex-direction: column;
+        row-gap: 4px;
+        width: 300px;
+        
+    }
+</style>
+
     <form action="#" method="POST">
         <input type="hidden" name="id">
         <select name="sender_id">
@@ -90,5 +79,4 @@
             </tbody>
         </table>
     </div>
-</body>
-</html>
+{% endblock %}

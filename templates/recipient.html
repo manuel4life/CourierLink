@@ -1,44 +1,25 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https//unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="../static/css/recipient.css">
     <title>Document</title>
-    <style>
-        form
-        {
-            display: flex;
-            flex-direction: column;
-            row-gap: 4px;
-            width: 300px;
-            
-        }
-
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-    </style>
 </head>
-<body>
-    <form action="#" method="POST">
-        <input type="text" placeholder="Recipient first name" name="first_name" />
-        <input type="text" placeholder="Recipient last name" name="last_name" />
-        <input type="email" placeholder="Recipient email" name="email" />
-        <input type="tel" placeholder="Recipient phone numbere" name="phone_number" />
-        <input type="text" placeholder="Enter street address" name="street_address" />
-        <input type="text" placeholder="Enter city" name="city" />
-        <input type="text" placeholder="Enter state" name="state" />
-        <input type="text" placeholder="Enter zip code" name="zip_code" />
-        <input type="text" placeholder="Enter country" name="country" />
-        <button type="submit">Add Recipient</button>
-    </form>
+<body> -->
+{% extends 'base.html' %} 
+{% block title %} Recipient {% endblock %} 
+{% block content %}
+    
 
     <div>
-        <p>List of all Recipients</p>
+            <div id="subheader">
+                <p>List of all Recipients</p>
+                <a class="btn" href="{{ url_for('recpient')}}">
+                    Add Recipient
+                </a>
+            </div>
         <table>
             <thead>
                 <tr>
@@ -70,6 +51,6 @@
             </tbody>
         </table>
     </div>
-
-</body>
-</html>
+{% endblock %}
+<!-- </body>
+</html> -->

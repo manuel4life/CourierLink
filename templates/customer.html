@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,22 +23,34 @@
         }
     </style>
 </head>
-<body>
-    <form action="#" method="POST">
-        <input type="text" placeholder="Sender first name" name="first_name" />
-        <input type="text" placeholder="Sender last name" name="last_name" />
-        <input type="email" placeholder="Sender email" name="email" />
-        <input type="tel" placeholder="Sender phone numbere" name="phone_number" />
-        <input type="text" placeholder="Enter street address" name="street_address" />
-        <input type="text" placeholder="Enter city" name="city" />
-        <input type="text" placeholder="Enter state" name="state" />
-        <input type="text" placeholder="Enter zip code" name="zip_code" />
-        <input type="text" placeholder="Enter country" name="country" />
-        <button type="submit">Add Sender</button>
-    </form>
+<body> -->
+{% extends 'base.html' %} 
+{% block title %} Sender {% endblock %} 
+{% block content %}
+    
+<style>
+    #subheader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0 20px;
+        height: 50px;
+        background-color: #fff;
+        border-bottom: 1px solid #ccc;
+    }
+
+    
+</style>
 
     <div>
-        <p>List of all senders</p>
+        <div id="subheader">
+            <p>List of all senders</p>
+            <a class="btn" href="{{ url_for('customer')}}">
+                Add Customer
+            </a>
+        </div>
+       <div class="table-content">
         <table>
             <thead>
                 <tr>
@@ -68,6 +80,9 @@
                     </tr>
                 {% endfor %}
             </tbody>
+        </table> 
+       </div>   
     </div>
-</body>
-</html>
+{% endblock %}
+<!-- </body>
+</html> -->
