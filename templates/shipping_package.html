@@ -3,45 +3,29 @@
 {% block content %}
 
 <style>
-    form
-    {
+    #subheader {
         display: flex;
-        flex-direction: column;
-        row-gap: 4px;
-        width: 300px;
-        
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0 20px;
+        height: 50px;
+        background-color: #fff;
+        border-bottom: 1px solid #ccc;
     }
+
+    
 </style>
 
-    <form action="#" method="POST">
-        <input type="hidden" name="id">
-        <select name="sender_id">
-            <option value="">Select Sender</option>
-            {% for sender in senders %}
-                <option value="{{ sender['id'] }}">{{ sender['first_name'] }} {{ sender['last_name'] }}</option>
-            {% endfor %}
-        </select>
-        <select name="recipient_id">
-            <option value="">Select Recipient</option>
-            {% for recipient in recipients %}
-                <option value="{{ recipient['id'] }}">{{ recipient['first_name'] }} {{ recipient['last_name'] }}</option>
-            {% endfor %}
-        </select>
-        <input type="text" placeholder="Package weight" name="weight" />
-        <input type="text" placeholder="Package height" name="height" />
-        <input type="text" placeholder="Package width" name="width" />
-        <input type="text" placeholder="Package length" name="length" />
-        <input type="text" placeholder="Shipping Carrier" name="shipping_carrier">
-        <input type="text" placeholder="Shipping Class" name="shipping_class">
-        <input type="date" placeholder="Shipping Date" name="shipping_date">
-        <input type="date" placeholder="Delivery Date" name="delivery_date">
-        <input type="text" placeholder="Tracking Number" name="tracking_number">
-        <input type="text" placeholder="Shipping Cost" name="shipping_cost">
-        <button type="submit">Add Package</button>
-    </form>
 
     <div>
-        <p>List of all Packages</p>
+        <div id="subheader">
+            <p>List of all Packages</p>
+            <a class="btn" href="{{ url_for('package')}}">
+                Add Customer
+            </a>
+        </div>
+       <div class="table-content">
         <table>
             <thead>
                 <tr>
@@ -78,5 +62,6 @@
                 {% endfor %}
             </tbody>
         </table>
+       </div>
     </div>
 {% endblock %}

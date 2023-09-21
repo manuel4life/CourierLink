@@ -12,14 +12,28 @@
 {% block title %} Recipient {% endblock %} 
 {% block content %}
     
+<style>
+    #subheader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0 20px;
+        height: 50px;
+        background-color: #fff;
+        border-bottom: 1px solid #ccc;
+    }
+    
 
+</style>
     <div>
             <div id="subheader">
                 <p>List of all Recipients</p>
-                <a class="btn" href="{{ url_for('recpient')}}">
+                <a class="btn" href="{{ url_for('recipient')}}">
                     Add Recipient
                 </a>
             </div>
+        <div class="table-content">
         <table>
             <thead>
                 <tr>
@@ -50,6 +64,7 @@
                 {% endfor %}
             </tbody>
         </table>
+        </div>
     </div>
 {% endblock %}
 <!-- </body>
