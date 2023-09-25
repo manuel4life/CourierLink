@@ -1,0 +1,107 @@
+{% extends 'index.html' %}
+{% block title %} About Us {% endblock %}
+
+{% block content %}
+<style>
+    .about 
+{
+    height: auto;
+    padding: 50px;
+    padding-left: 200px;
+    padding-right: 200px;
+    background:  url(../static/asset/images/bg-1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.carousel-indicator
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100%; */
+    gap: 5px;
+}
+
+.carousel-indicator span
+{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+}
+
+.about-indicator
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.about-indicator div
+{
+    width: 50%;
+    height: 50px;
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 0 auto; 
+    text-align: center; 
+}
+
+h2 {
+    color: white; 
+    font-size: 28px; 
+    margin-bottom: 20px; 
+}
+
+h3 {
+    color: White;
+    font-size: 22px; 
+    margin-top: 20px; 
+}
+
+p {
+    color: white; 
+    font-size: 16px; 
+    line-height: 1.6; 
+    margin-bottom: 20px;
+}
+
+</style>
+<section class="about">
+        <div class="container">
+            <h2>About CourierLink</h2>
+            <p>
+                Welcome to CourierLink, your trusted partner in the world of shipping and logistics. We are a dedicated team of professionals passionate about simplifying your shipping experience. With a commitment to excellence and customer satisfaction, we aim to redefine the way you send and receive packages.
+            </p>
+    
+            <h3>Our Mission</h3>
+            <p>
+                At CourierLink, our mission is simple yet powerful: to connect people and businesses, making the world a smaller place by ensuring your parcels and documents reach their destination safely and on time. We understand the importance of reliable shipping services, and we're here to deliver beyond your expectations.
+            </p>
+    
+            <!-- Add more subsections and content as needed -->
+    
+            <h3>Get in Touch</h3>
+            <p>
+                We invite you to experience the CourierLink difference. Whether you are sending a single package or managing complex logistics, we are here to make it easy for you. Contact us today to learn more about our services and how we can assist you with your shipping needs.
+            </p>
+        </div>
+    </div>
+
+    <div class="about-indicator">
+        <div>
+            <article class="carousel-indicator">
+                <span></span>
+                <span></span>
+                <span></span>
+            </article>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

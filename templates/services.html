@@ -1,0 +1,96 @@
+{%extends 'index.html' %}
+{%block title %} Services {%endblock%}
+{%block content %}
+<style>
+ header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.service {
+    flex-basis: calc(50% - 20px);
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    color: #4d4a4a;
+}
+
+
+.service h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.service p {
+    font-size: 16px;
+    color: #4d4a4a;
+    line-height: 1.6;
+}
+.service:hover {
+    background-color: #f5f5f5;
+    transition: background-color 0.3s ease;
+}
+.services-message {
+    background-color: #121C3B;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+</style>
+<header>
+    <h1>Our Services</h1>
+</header>
+<div class="content">
+    <section class="service">
+        <h2>Express Shipping</h2>
+        <p>Our Express Shipping service ensures quick and reliable delivery of your packages. We prioritize speed and safety to get your shipments to their destination on time.</p>
+    </section>
+    <section class="service">
+        <h2>Package Tracking</h2>
+        <p>With our Package Tracking feature, you can stay informed about the status and location of your shipments in real-time. Track your packages easily and never lose sight of your valuable cargo.</p>
+    </section>
+    <section class="service">
+        <h2>International Shipping</h2>
+        <p>Go global with our International Shipping service. We specialize in international logistics, helping you expand your reach and connect with customers worldwide. Seamlessly ship across borders with us.</p>
+    </section>
+    <section class="service">
+        <h2>Warehousing</h2>
+        <p>Our Warehousing solutions provide secure storage and efficient management of your goods. Whether short-term or long-term storage, we offer the space and infrastructure to meet your warehousing needs.</p>
+    </section>
+</div>
+
+<!-- Services Message -->
+<div class="services-message">
+    <p>We are dedicated to providing top-notch logistics and shipping services tailored to your requirements. From local deliveries to global distribution, we have the expertise and resources to support your business. Your satisfaction is our priority.</p>
+</div>
+
+
+{%endblock%}

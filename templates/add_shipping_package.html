@@ -2,9 +2,61 @@
 {% block title %} Add Package {% endblock %} 
 {% block content %}
 
+<style>
+    body{
+        background-color: rgba(0, 0, 0, 0.1)
+    }
+    .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* min-height: 90vh; */
+    }
 
+    .form {
+        width: 500px;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    }
 
+    .form h1 {
+        color: #2f55d4;
+        text-align: center;
+        margin-bottom: 20px;
+    }
 
+    .form input, select {
+        width: 100%;
+        height: 40px;
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: large;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .form button {
+        background-color: #2f55d4;
+        color: #fff;
+        border: none;
+        height: 40px;
+        font-size: large;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        width: 460px;
+    }
+
+    .form button:hover {
+        background-color: #1e40af;
+    }
+</style>
+
+<div class="form-container">
+    <div class="form">
 <form action="#" method="POST">
     <input type="hidden" name="id">
     <select name="sender_id">
@@ -19,18 +71,19 @@
             <option value="{{ recipient['id'] }}">{{ recipient['first_name'] }} {{ recipient['last_name'] }}</option>
         {% endfor %}
     </select>
-    <input type="text" placeholder="Package weight" name="weight" />
-    <input type="text" placeholder="Package height" name="height" />
-    <input type="text" placeholder="Package width" name="width" />
-    <input type="text" placeholder="Package length" name="length" />
+    <input type="number" placeholder="Package weight" name="weight" />
+    <input type="number" placeholder="Package height" name="height" />
+    <input type="number" placeholder="Package width" name="width" />
+    <input type="number" placeholder="Package length" name="length" />
     <input type="text" placeholder="Shipping Carrier" name="shipping_carrier">
     <input type="text" placeholder="Shipping Class" name="shipping_class">
     <input type="date" placeholder="Shipping Date" name="shipping_date">
     <input type="date" placeholder="Delivery Date" name="delivery_date">
     <input type="text" placeholder="Tracking Number" name="tracking_number">
-    <input type="text" placeholder="Shipping Cost" name="shipping_cost">
-    <button type="submit">Add Package</button>
+    <input type="number" placeholder="Shipping Cost" name="shipping_cost">
+    <button class="btn btn-large" type="submit">Add Package</button>
 </form>
-
+</div>
+</div>
 
 {% endblock %}

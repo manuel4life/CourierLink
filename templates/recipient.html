@@ -23,7 +23,48 @@
         background-color: #fff;
         border-bottom: 1px solid #ccc;
     }
-    
+    #subheader p {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .table-content {
+        margin-top: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table thead tr th {
+        text-align: left;
+        padding: 10px 0;
+        font-size: 14px;
+        font-weight: 600;
+        color: #000;
+    }
+
+    table tbody tr td {
+        padding: 10px 0;
+        font-size: 14px;
+        font-weight: 400;
+        color: #000;
+    }
+
+    table tbody tr:nth-child(odd) {
+        background-color: #f2f2f2;
+    }
+
+    table tbody tr td a {
+        color: #000;
+        text-decoration: none;
+    }
+
+    table tbody tr td a:hover {
+        text-decoration: underline;
+    }
+
 
 </style>
     <div>
@@ -50,6 +91,7 @@
             </thead>
             <tbody>
                 {% for recipient in recipients %}
+                    {% if recipient['first_name'] %}
                     <tr>
                         <td>{{recipient['first_name'] }}</td>
                         <td>{{recipient['last_name'] }}</td>
@@ -61,6 +103,7 @@
                         <td>{{recipient['zip_code'] }}</td>
                         <td>{{recipient['country'] }}</td>
                     </tr>
+                    {% endif %}
                 {% endfor %}
             </tbody>
         </table>

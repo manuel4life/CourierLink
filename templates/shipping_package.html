@@ -8,10 +8,52 @@
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        padding: 0 20px;
+        /* padding: 0 20px; */
         height: 50px;
         background-color: #fff;
         border-bottom: 1px solid #ccc;
+    }
+
+    #subheader p {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .table-content {
+        margin-top: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table thead tr th {
+        text-align: left;
+        padding: 10px 0;
+        font-size: 14px;
+        font-weight: 600;
+        color: #000;
+    }
+
+    table tbody tr td {
+        padding: 10px 0;
+        font-size: 14px;
+        font-weight: 400;
+        color: #000;
+    }
+
+    table tbody tr:nth-child(odd) {
+        background-color: #f2f2f2;
+    }
+
+    table tbody tr td a {
+        color: #000;
+        text-decoration: none;
+    }
+
+    table tbody tr td a:hover {
+        text-decoration: underline;
     }
 
     
@@ -22,15 +64,13 @@
         <div id="subheader">
             <p>List of all Packages</p>
             <a class="btn" href="{{ url_for('package')}}">
-                Add Customer
+                Add a Package
             </a>
         </div>
        <div class="table-content">
         <table>
             <thead>
                 <tr>
-                    <th>Sender ID</th>
-                    <th>Recipient ID</th>
                     <th>Package weight</th>
                     <th>Package height</th>
                     <th>Package width</th>
@@ -41,13 +81,12 @@
                     <th>Delivery Date</th>
                     <th>Tracking Number</th>
                     <th>Shipping Cost</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
                 {% for package in shipping_packages %}
                     <tr>
-                        <td>{{package['sender_id'] }}</td>
-                        <td>{{package['recipient_id'] }}</td>
                         <td>{{package['weight'] }}</td>
                         <td>{{package['height'] }}</td>
                         <td>{{package['width'] }}</td>
@@ -58,6 +97,13 @@
                         <td>{{package['delivery_date'] }}</td>
                         <td>{{package['tracking_number'] }}</td>
                         <td>{{package['shipping_cost'] }}</td>
+                        <td>
+                            <div class="btn_veiw">
+                                <a href="{{ url_for('view_package', id=package['id']) }}" class="btn btn-view">View</a>
+                                <a href="{{ url_for('edit_package', id=package['id']) }}" class="btn btn-update">Edit</a>
+                                <a href="{{ url_for('delete_package', id=package['id']) }}" class="btn btn-delete">Delete</a>
+                            </div>
+                        </td>
                     </tr>
                 {% endfor %}
             </tbody>
