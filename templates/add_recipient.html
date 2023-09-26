@@ -1,0 +1,76 @@
+{% extends 'base.html' %} 
+{% block title %} Add Recipient {% endblock %} 
+{% block content %}
+
+<style>
+    body{
+        background-color: rgba(0, 0, 0, 0.1)
+    }
+    .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* min-height: 90vh; */
+    }
+
+    .form {
+        width: 500px;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form h1 {
+        color: #2f55d4;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .form input {
+        width: 100%;
+        height: 40px;
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: large;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .form button {
+        background-color: #2f55d4;
+        color: #fff;
+        border: none;
+        height: 40px;
+        font-size: large;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        width: 460px;
+    }
+
+    .form button:hover {
+        background-color: #1e40af;
+    }
+</style>
+
+<div class="form-container">
+    <div class="form">
+    <h1>Create new Recipient</h1>
+    <form action="#" method="POST">
+        <input type="text" placeholder="Recipient first name" name="first_name" />
+        <input type="text" placeholder="Recipient last name" name="last_name" />
+        <input type="email" placeholder="Recipient email" name="email" />
+        <input type="tel" placeholder="Recipient phone number" name="phone_number" />
+        <input type="text" placeholder="Enter street address" name="street_address" />
+        <input type="text" placeholder="Enter city" name="city" />
+        <input type="text" placeholder="Enter state" name="state" />
+        <input type="text" placeholder="Enter zip code" name="zip_code" />
+        <input type="text" placeholder="Enter country" name="country" />
+        <button class="btn btn-large"type="submit">Add Recipient</button>
+    </form>
+</div>
+</div>
+
+{% endblock %}

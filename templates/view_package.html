@@ -1,0 +1,85 @@
+{% extends 'base.html' %} 
+{% block title %} View package {% endblock %} 
+{% block content %}
+
+
+<style>
+    #update_status{
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        /* flex-direction: column; */
+        align-items: start;
+    }
+</style>
+
+<div class="table-content">
+    <h1>Package Overview</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Package weight</th>
+                <th>Package height</th>
+                <th>Package width</th>
+                <th>Package length</th>
+                <th>Shipping Carrier</th>
+                <th>Shipping Class</th>
+                <th>Shipping Date</th>
+                <th>Delivery Date</th>
+                <th>Tracking Number</th>
+                <th>Shipping Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>{{package['weight'] }}</td>
+                    <td>{{package['height'] }}</td>
+                    <td>{{package['width'] }}</td>
+                    <td>{{package['length'] }}</td>
+                    <td>{{package['shipping_carrier'] }}</td>
+                    <td>{{package['shipping_class'] }}</td>
+                    <td>{{package['shipping_date'] }}</td>
+                    <td>{{package['delivery_date'] }}</td>
+                    <td>{{package['tracking_number'] }}</td>
+                    <td>{{package['shipping_cost'] }}</td>
+                </tr>
+                
+        </tbody>
+    </table>
+   </div>
+   <div id="update_status">
+        <h1>Package Statuses</h1>
+        <a href="{{ url_for('update_status', id=id)}}" class="btn btn-update">Update Status</a>
+   </div>
+   <div class="table-content">
+    <table>
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <!-- <th>Shipping Package Id</th> -->
+                <th>Shipping Status</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for package in shipping_package_status %}
+                <tr>
+                    <td>{{package['id'] }}</td>
+                    <!-- <td>{{package['shipping_package_id'] }}</td> -->
+                    <td>{{package['status'] }}</td>
+                    <td>{{package['status_date'] }}</td>
+                    <td>
+                        <div class="btn_veiw">
+                            <a href="{{ url_for('edit_package', id=package['id']) }}" class="btn btn-update">Edit</a>
+                            <a href="{{ url_for('delete_package', id=package['id']) }}" class="btn btn-delete">Delete</a>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+   </div>
+
+{% endblock %}

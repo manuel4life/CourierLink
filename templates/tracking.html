@@ -1,0 +1,213 @@
+{% extends 'index.html' %} {% block title %}CourierLink-Tracking{% endblock %}
+{% block content %}
+<style>
+    #update_status {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    /* flex-direction: column; */
+    align-items: start;
+ }
+  #tracking-form {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  form {
+    margin-bottom: 10px;
+  }
+
+  form input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 600px;
+  }
+
+  form input[type="submit"] {
+    background-color: #121C3B;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  form input[type="submit"]:hover {
+    background-color: rgb(59, 58, 58);
+  }
+    
+    
+    .table-main {
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  
+    .table-main h1 {
+      font-size: 24px;
+      color: #1e90ff; 
+    }
+  
+    .table-main table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #ddd;
+    }
+  
+    .table-main th,
+    .table-main td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+  
+    .table-main th {
+      background-color: #1e90ff; 
+      color: #fff;
+      font-weight: bold;
+    }
+  
+    .table-main tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  
+    .table-content {
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  
+    .table-content h1 {
+      font-size: 24px;
+      color: #1e90ff; 
+    }
+  
+    .table-content table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #ddd;
+    }
+  
+    .table-content th,
+    .table-content td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+  
+    .table-content th {
+      background-color: #1e90ff; 
+      color: #fff;
+      font-weight: bold;
+    }
+  
+    .table-content tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  
+    @media screen and (max-width: 600px) {
+      .table-main h1,
+      .table-content h1 {
+        font-size: 20px;
+      }
+  
+      .table-main th,
+      .table-main td,
+      .table-content th,
+      .table-content td {
+        padding: 8px;
+      }
+    }
+
+    
+  </style>
+  
+  
+<div id="tracking-form">
+  <form action="#" method="POST">
+    <!-- <label for="tracking">Tracking Number</label> -->
+    <input
+      type="text"
+      id="tracking"
+      name="tracking_number"
+      placeholder="Enter Tracking Number"
+      required
+    />
+    <input type="submit" value="Track" />
+  </form>
+</div>
+
+{% if package %} 
+{% if package['weight'] is none %}
+<h1>Package not found</h1>
+{% else %}
+
+<div class="table-main">
+  <h1>Package Overview</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Package weight</th>
+        <th>Package height</th>
+        <th>Package width</th>
+        <th>Package length</th>
+        <th>Shipping Carrier</th>
+        <th>Shipping Class</th>
+        <th>Shipping Date</th>
+        <th>Delivery Date</th>
+        <th>Tracking Number</th>
+        <th>Shipping Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{package['weight'] }}</td>
+        <td>{{package['height'] }}</td>
+        <td>{{package['width'] }}</td>
+        <td>{{package['length'] }}</td>
+        <td>{{package['shipping_carrier'] }}</td>
+        <td>{{package['shipping_class'] }}</td>
+        <td>{{package['shipping_date'] }}</td>
+        <td>{{package['delivery_date'] }}</td>
+        <td>{{package['tracking_number'] }}</td>
+        <td>{{package['shipping_cost'] }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div id="update_status">
+  <h1>Package Statuses</h1>
+</div>
+<div class="table-content">
+  <table>
+    <thead>
+      <tr>
+        <!-- <th>Shipping Package Id</th> -->
+        <th>Shipping Status</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for package in shipping_package_status %}
+      <tr>
+        <!-- <td>{{package['shipping_package_id'] }}</td> -->
+        <td>{{package['status'] }}</td>
+        <td>{{package['status_date'] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+ {% endif %} {% endif %} {% endblock %}
